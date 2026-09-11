@@ -1,38 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>GANITVA — Mathematics Gaming Lab</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,Arial,sans-serif;background:#f4f7fb;color:#172033}
-header{background:linear-gradient(135deg,#243b80,#5169d8);color:#fff;padding:28px 6%;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.logo{font-size:30px;font-weight:800;letter-spacing:1px}.tag{opacity:.9}
-main{max-width:1100px;margin:35px auto;padding:0 20px}.hero{background:#fff;border-radius:22px;padding:35px;box-shadow:0 8px 30px #1b2b4d14}
-h1{margin-top:0;font-size:34px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:25px}
-.card{background:#fff;border:1px solid #e4e9f2;border-radius:18px;padding:22px;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 8px 22px #1b2b4d12}
-button,.btn{border:0;border-radius:12px;padding:12px 18px;background:#4058c9;color:white;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
-.lock{opacity:.55}.small{font-size:14px;color:#667085}.admin{background:#172033}.chapter{font-size:19px;font-weight:750}
-footer{text-align:center;color:#667085;padding:30px}
-</style>
-</head>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Arial,sans-serif;color:#172033;background:linear-gradient(120deg,#eef7ff,#fff5e8,#f4efff);background-size:300% 300%;animation:bg 12s ease infinite;overflow-x:hidden}
+@keyframes bg{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+header{position:relative;overflow:hidden;padding:24px 6%;color:#fff;background:linear-gradient(135deg,#1d347f,#604bd6);box-shadow:0 8px 30px #17203333}
+header:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:#ffffff15;right:-70px;top:-120px;animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(22px) rotate(12deg)}}
+.nav{max-width:1150px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative;z-index:2}.logo{font-size:32px;font-weight:950;letter-spacing:2px;text-shadow:0 4px 12px #0003}.sub{opacity:.9}.admin{color:#fff;text-decoration:none;border:1px solid #ffffff55;background:#ffffff18;padding:10px 15px;border-radius:13px;font-weight:800}
+main{max-width:1150px;margin:auto;padding:28px 16px}.hero{position:relative;background:#ffffffd9;border:1px solid #fff;border-radius:30px;padding:34px;box-shadow:0 15px 45px #243b8018;overflow:hidden}
+.hero h1{font-size:clamp(32px,6vw,58px);line-height:1;margin:0 0 12px}.hero p{font-size:19px;color:#5a6780}.badge{display:inline-block;background:#fff0b8;padding:9px 14px;border-radius:999px;font-weight:850}
+.mascot{position:absolute;right:35px;bottom:25px;font-size:90px;animation:bounce 2.3s ease-in-out infinite;filter:drop-shadow(0 10px 10px #0002)}@keyframes bounce{50%{transform:translateY(-14px) rotate(4deg)}}
+.section-title{text-align:center;margin:32px 0 15px;font-size:28px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:#fff;border-radius:24px;padding:23px;border:2px solid #e7ebf5;box-shadow:0 9px 25px #17203312;transition:.25s;position:relative;overflow:hidden}.card:hover{transform:translateY(-7px) scale(1.01);box-shadow:0 18px 35px #17203320}.card .emoji{font-size:52px}.card h3{font-size:21px;margin:8px 0}.card p{color:#68758d}.btn{display:inline-block;text-decoration:none;color:#fff;background:linear-gradient(135deg,#4058c9,#7358d7);padding:13px 18px;border-radius:13px;font-weight:850;box-shadow:0 6px 14px #4058c944}.lock{opacity:.6}
+footer{text-align:center;padding:30px;color:#69758b}
+.spark{position:fixed;pointer-events:none;font-size:18px;animation:fall 3s linear infinite;opacity:.7}@keyframes fall{from{transform:translateY(-40px) rotate(0)}to{transform:translateY(105vh) rotate(360deg)}}
+@media(max-width:700px){.mascot{position:static;font-size:60px;margin-top:10px}.hero{padding:25px}}
+</style></head>
 <body>
-<header><div><div class="logo">GANITVA</div><div class="tag">Mathematics Gaming Lab</div></div><a class="btn admin" href="admin.html">Admin Portal</a></header>
+<div class="spark" style="left:8%;animation-delay:.2s">✦</div><div class="spark" style="left:24%;animation-delay:1.4s">✧</div><div class="spark" style="left:48%;animation-delay:.8s">✦</div><div class="spark" style="left:72%;animation-delay:2s">✧</div><div class="spark" style="left:90%;animation-delay:1s">✦</div>
+<header><div class="nav"><div><div class="logo">✨ GANITVA</div><div class="sub">Mathematics Gaming Lab</div></div><a class="admin" href="admin.html">👩‍🏫 Admin</a></div></header>
 <main>
-<section class="hero">
-<h1>Learn Mathematics by Playing</h1>
-<p>Interactive, curriculum-aligned mathematics games for Class 6.</p>
+<section class="hero"><span class="badge">🚀 CLASS 6 • LET'S PLAY & LEARN!</span><h1>Welcome, Math Explorer! 🧠✨</h1><p>Step into a world where numbers become adventures, patterns become puzzles, and every correct answer earns a celebration!</p><div class="mascot">🧑‍🚀</div></section>
+<h2 class="section-title">🌍 Choose Your Mathematical World</h2>
 <div class="cards">
-<div class="card"><div class="chapter">🎮 Student Portal</div><p class="small">Play games, earn XP and complete mathematics challenges.</p><a class="btn" href="student.html">Enter Student Portal</a></div>
-<div class="card"><div class="chapter">👩‍🏫 Teacher / Admin</div><p class="small">Manage question content and prepare the platform for classroom use.</p><a class="btn admin" href="admin.html">Open Admin</a></div>
-</div>
-</section>
-<h2>Class 6 — Ganita Prakash</h2>
-<div class="cards">
-<div class="card"><div class="chapter">Chapter 1 — Patterns in Mathematics</div><p>10 interactive games • Available</p><a class="btn" href="chapter1.html">Play Chapter 1</a></div>
-<div class="card lock"><div class="chapter">Chapter 2 — Lines and Angles</div><p>Coming next</p></div>
-<div class="card lock"><div class="chapter">Chapter 3 — Number Play</div><p>Coming next</p></div>
-<div class="card lock"><div class="chapter">Chapters 4–10</div><p>Progressively added after testing</p></div>
-</div>
-</main><footer>GANITVA • Class 6 Mathematics Innovation Project</footer>
+<div class="card"><div class="emoji">🏔️</div><h3>Chapter 1 — Pattern Mountains</h3><p>10 missions • Discover hidden patterns • Defeat the Pattern Boss</p><a class="btn" href="chapter1_adventure.html">ENTER ADVENTURE 🚀</a></div>
+<div class="card lock"><div class="emoji">📐</div><h3>Chapter 2 — Lines & Angles</h3><p>Coming soon… A new world is being prepared!</p></div>
+<div class="card lock"><div class="emoji">🔢</div><h3>Chapter 3 — Number Play</h3><p>Coming soon…</p></div>
+<div class="card lock"><div class="emoji">🌟</div><h3>Chapters 4–10</h3><p>More mathematical worlds will unlock soon.</p></div>
+</div></main><footer>GANITVA • Discover. Play. Think. Master.</footer>
 </body></html>
