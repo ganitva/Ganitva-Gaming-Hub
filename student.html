@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GANITVA Student Portal</title><style>
+body{margin:0;font-family:system-ui,Arial;background:#f5f7fc;color:#172033}header{background:#243b80;color:white;padding:22px 6%}main{max-width:1000px;margin:30px auto;padding:0 18px}.panel{background:white;border-radius:20px;padding:25px;box-shadow:0 6px 24px #0000000d}.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.game{border:1px solid #e4e9f2;border-radius:16px;padding:20px}.btn{display:inline-block;background:#4058c9;color:#fff;padding:11px 16px;border-radius:10px;text-decoration:none;font-weight:700}.stats{display:flex;gap:15px;flex-wrap:wrap;margin:18px 0}.stat{background:#eef2ff;padding:12px 18px;border-radius:12px;font-weight:700}
+</style></head><body><header><h1>GANITVA Student Portal</h1><div>Class 6</div></header><main>
+<div class="panel"><h2>Welcome, Young Mathematician!</h2><div class="stats"><div class="stat">⭐ XP: <span id="xp">0</span></div><div class="stat">🏆 Games Completed: <span id="done">0</span></div></div>
+<h2>Chapter 1 — Patterns in Mathematics</h2><div class="games">
+<div class="game"><h3>1. Pattern Detective</h3><p>Find and explain number patterns.</p><a class="btn" href="chapter1.html#game1">Play</a></div>
+<div class="game"><h3>2. Sequence Builder</h3><p>Complete mathematical sequences.</p><a class="btn" href="chapter1.html#game2">Play</a></div>
+<div class="game"><h3>3. Picture the Numbers</h3><p>Connect numbers with visual patterns.</p><a class="btn" href="chapter1.html#game3">Play</a></div>
+<div class="game"><h3>4. Odd-to-Square Lab</h3><p>Discover how odd numbers build squares.</p><a class="btn" href="chapter1.html#game4">Play</a></div>
+<div class="game"><h3>5. Polygon Lab</h3><p>Explore side-count patterns.</p><a class="btn" href="chapter1.html#game5">Play</a></div>
+<div class="game"><h3>6. Pattern Master</h3><p>Challenge round.</p><a class="btn" href="chapter1.html#game6">Play</a></div>
+<div class="game"><h3>7. Sequence Relations</h3><p>Discover relationships between sequences.</p><a class="btn" href="chapter1.html#game7">Play</a></div>
+<div class="game"><h3>8. Shape Detective</h3><p>Identify shape-sequence rules.</p><a class="btn" href="chapter1.html#game8">Play</a></div>
+<div class="game"><h3>9. Koch Explorer</h3><p>Explore repeated segment patterns.</p><a class="btn" href="chapter1.html#game9">Play</a></div>
+<div class="game"><h3>10. Final Pattern Quest</h3><p>Final Chapter 1 challenge.</p><a class="btn" href="chapter1.html#game10">Play</a></div>
+</div></div></main>
+<script>document.getElementById('xp').textContent=localStorage.getItem('ganitvaXP')||0;document.getElementById('done').textContent=localStorage.getItem('ganitvaDone')||0;</script>
+</body></html>

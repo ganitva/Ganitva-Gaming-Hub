@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GANITVA Admin</title><style>
+body{margin:0;font-family:system-ui,Arial;background:#f4f7fb;color:#172033}header{background:#172033;color:#fff;padding:22px 6%}main{max-width:950px;margin:25px auto;padding:0 18px}.panel{background:#fff;padding:25px;border-radius:18px;margin-bottom:18px}input,select,textarea{width:100%;padding:11px;margin:7px 0 15px;border:1px solid #d5dbe7;border-radius:9px;font:inherit}button{background:#4058c9;color:#fff;border:0;border-radius:10px;padding:11px 16px;font-weight:700;cursor:pointer}.danger{background:#b42318}.hidden{display:none}.note{background:#fff4d6;padding:14px;border-radius:10px}
+</style></head><body><header><h1>GANITVA Admin / Teacher Portal</h1><p>Content management prototype</p></header><main>
+<div id="login" class="panel"><h2>Admin Login</h2><p>Prototype PIN: <b>2468</b></p><input id="pin" type="password" placeholder="Enter PIN"><button onclick="login()">Enter</button><p id="err"></p></div>
+<div id="admin" class="hidden"><div class="panel"><div class="note">⚠️ This PIN is only suitable for the prototype. A production portal must use server-side authentication.</div><h2>Add Question</h2>
+<label>Game</label><select id="game"></select><label>Difficulty</label><select id="diff"><option>Easy</option><option>Medium</option><option>Hard</option></select>
+<label>Question</label><textarea id="q"></textarea><label>Correct Answer</label><input id="ans"><label>Options (comma separated)</label><input id="opts"><label>Explanation</label><textarea id="exp"></textarea><button onclick="save()">Save Question</button></div>
+<div class="panel"><h2>Saved Questions</h2><div id="list"></div></div></div></main>
+<script>
+const games=["Pattern Detective","Sequence Builder","Picture the Numbers","Odd-to-Square Lab","Polygon Lab","Pattern Master","Sequence Relations","Shape Detective","Koch Explorer","Final Pattern Quest"];
+game.innerHTML=games.map((x,i)=>`<option>Game ${i+1}: ${x}</option>`).join("");
+function login(){if(pin.value==="2468"){loginDiv=document.getElementById("login");loginDiv.classList.add("hidden");document.getElementById("admin").classList.remove("hidden");render()}else err.textContent="Incorrect PIN."}
+function save(){let arr=JSON.parse(localStorage.getItem("ganitvaQuestions")||"[]");arr.push({game:game.value,diff:diff.value,q:q.value,ans:ans.value,opts:opts.value,exp:exp.value});localStorage.setItem("ganitvaQuestions",JSON.stringify(arr));q.value=ans.value=opts.value=exp.value="";render()}
+function render(){let arr=JSON.parse(localStorage.getItem("ganitvaQuestions")||"[]");list.innerHTML=arr.length?arr.map((x,i)=>`<div style="border-bottom:1px solid #ddd;padding:12px 0"><b>${x.game}</b> — ${x.diff}<br>${x.q}<br><small>Answer: ${x.ans}</small> <button class="danger" onclick="del(${i})">Delete</button></div>`).join(""):"No custom questions saved yet."}
+function del(i){let arr=JSON.parse(localStorage.getItem("ganitvaQuestions")||"[]");arr.splice(i,1);localStorage.setItem("ganitvaQuestions",JSON.stringify(arr));render()}
+</script></body></html>
